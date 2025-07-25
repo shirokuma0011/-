@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>フリマアプリデモ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>フリマアプリデモ</h1>
+        <nav id="user-nav"></nav>
+    </header>
+    <main>
+        <section id="search-section">
+            <input type="text" id="search" placeholder="商品を検索">
+            <button onclick="searchItems()">検索</button>
+        </section>
+        <section id="items"></section>
+        <section id="add-item-section" class="hidden">
+            <h2>商品を出品</h2>
+            <form id="add-item-form">
+                <input type="text" id="item-title" placeholder="タイトル" required>
+                <textarea id="item-desc" placeholder="説明" required></textarea>
+                <input type="number" id="item-price" placeholder="価格" required>
+                <input type="file" id="item-image" accept="image/*">
+                <button type="submit">出品</button>
+            </form>
+        </section>
+    </main>
+    <div id="login-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2>ログイン / 新規登録</h2>
+            <form id="login-form">
+                <input type="text" id="username" placeholder="ユーザー名" required>
+                <input type="password" id="password" placeholder="パスワード" required>
+                <button type="submit">続行</button>
+            </form>
+            <button onclick="closeLogin()">閉じる</button>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
